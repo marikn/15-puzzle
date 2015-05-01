@@ -14,7 +14,7 @@ class Puzzle
     self.moves  = 0
 
     @puzzle = (1..15).to_a
-    @ef 	  = [3,3]
+    @ef     = [3,3]
 
     shuffle!
   end
@@ -44,19 +44,19 @@ class Puzzle
     case direction
       when 'w'
         if @ef[1] != 3
-	        swap!(@ef[0], @ef[1]+1, @ef[1], 'v')
+	  swap!(@ef[0], @ef[1]+1, @ef[1], 'v')
         end
       when 's'
         if @ef[1] != 0
-	        swap!(@ef[0], @ef[1]-1, @ef[1], 'v')
+	  swap!(@ef[0], @ef[1]-1, @ef[1], 'v')
         end
       when 'a'
         if @ef[0] != 3
-	        swap!(@ef[0]+1, @ef[1], @ef[0], 'h')
+	  swap!(@ef[0]+1, @ef[1], @ef[0], 'h')
         end
       when 'd'
         if @ef[0] != 0
-	        swap!(@ef[0]-1, @ef[1], @ef[0], 'h')
+	  swap!(@ef[0]-1, @ef[1], @ef[0], 'h')
         end
     end
   end
