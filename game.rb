@@ -130,12 +130,11 @@ puzzle.draw
 
 while (ch = puzzle.window.getch)
   if puzzle.is_won
-    case ch
-    when 'q'
-      exit
-    when 'r'
+    if ch == 'r'
       puzzle.reset!
       puzzle.draw
+    elsif ch == 'q'
+      exit
     end
   else
     puzzle.move!(ch)
